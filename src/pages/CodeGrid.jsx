@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import preview from "../assets/preview.png";
-import Code01 from "./Code/Code01";
 
-const CodePreview = ({ onClick, index }) => (
+const CodePreview = React.memo(({ onClick, index }) => (
   <>
     <img
       src={preview}
@@ -11,7 +10,11 @@ const CodePreview = ({ onClick, index }) => (
     />
     <p className="text-center py-2">Code {index + 1}</p>
   </>
-);
+));
+
+const Code01 = lazy(() => import("./Code/Code01"));
+const Code02 = lazy(() => import("./Code/Code01"));
+const Code03 = lazy(() => import("./Code/Code01"));
 
 const ExpandedCodeView = ({ onCloseClick, Component }) => (
   <Component onCloseClick={onCloseClick} />
@@ -32,20 +35,7 @@ function CodeGrid() {
 
   const isExpanded = (index) => index === expandedDiv;
 
-  const codeComponents = [
-    Code01,
-    Code01,
-    Code01,
-    Code01,
-    Code01,
-    Code01,
-    Code01,
-    Code01,
-    Code01,
-    Code01,
-    Code01,
-    Code01,
-  ];
+  const codeComponents = [Code01, Code02, Code03];
 
   return (
     <section className="px-16 pt-[16px] pb-16 overflow-y-auto h-screen scrollbar-thin scrollbar-thumb-appWhiteDis scrollbar-track-transparent">
@@ -61,10 +51,18 @@ function CodeGrid() {
             {!isExpanded(index) ? (
               <CodePreview onClick={() => handleClick(index)} index={index} />
             ) : (
-              <ExpandedCodeView
-                onCloseClick={handleCloseClick}
-                Component={Component}
-              />
+              <Suspense
+                fallback={
+                  <div className="flex justify-center items-center m-0">
+                    Loading...
+                  </div>
+                }
+              >
+                <ExpandedCodeView
+                  onCloseClick={handleCloseClick}
+                  Component={Component}
+                />
+              </Suspense>
             )}
           </div>
         ))}
