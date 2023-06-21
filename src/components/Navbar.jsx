@@ -1,5 +1,10 @@
 import React, { useContext, useEffect, useState, useCallback } from "react";
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  NavLink,
+  Routes,
+} from "react-router-dom";
 import { ThemeContext } from "../utils/ThemeContext";
 
 import { FiSun, FiMoon } from "react-icons/fi";
@@ -44,7 +49,19 @@ function Navbar() {
     setNav((prevNav) => !prevNav);
   }, []);
 
-  const handleLoading = useCallback(() => {
+  const handleLinkClick = useCallback(() => {
+    if (nav) {
+      setIsLoading(true);
+
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1500);
+
+      setNav(false);
+    }
+  }, [nav]);
+
+  const handleClick = useCallback(() => {
     setIsLoading(true);
 
     setTimeout(() => {
@@ -61,32 +78,68 @@ function Navbar() {
           </h1>
           <ul className="dark:text-white hidden sm:flex">
             <li className="p-4">
-              <Link to="/" onClick={handleLoading} className={hoverClass}>
-                Home
-              </Link>
-            </li>
-            <li className="p-4">
-              <Link to="/about" onClick={handleLoading} className={hoverClass}>
-                About
-              </Link>
-            </li>
-            <li className="p-4">
-              <Link
-                to="/codegrid"
-                onClick={handleLoading}
+              <NavLink
+                to="/"
+                onClick={handleClick}
                 className={hoverClass}
+                style={({ isActive }) => {
+                  return {
+                    borderBottom: isActive
+                      ? "2px solid " + (theme === "dark" ? "white" : "black")
+                      : "",
+                  };
+                }}
+              >
+                Home
+              </NavLink>
+            </li>
+            <li className="p-4">
+              <NavLink
+                to="/about"
+                onClick={handleClick}
+                className={hoverClass}
+                style={({ isActive }) => {
+                  return {
+                    borderBottom: isActive
+                      ? "2px solid " + (theme === "dark" ? "white" : "black")
+                      : "",
+                  };
+                }}
+              >
+                About
+              </NavLink>
+            </li>
+            <li className="p-4">
+              <NavLink
+                to="/codegrid"
+                onClick={handleClick}
+                className={hoverClass}
+                style={({ isActive }) => {
+                  return {
+                    borderBottom: isActive
+                      ? "2px solid " + (theme === "dark" ? "white" : "black")
+                      : "",
+                  };
+                }}
               >
                 CodeGrid
-              </Link>
+              </NavLink>
             </li>
             <li className="p-4">
-              <Link
+              <NavLink
                 to="/contact"
-                onClick={handleLoading}
+                onClick={handleClick}
                 className={hoverClass}
+                style={({ isActive }) => {
+                  return {
+                    borderBottom: isActive
+                      ? "2px solid " + (theme === "dark" ? "white" : "black")
+                      : "",
+                  };
+                }}
               >
                 Contact
-              </Link>
+              </NavLink>
             </li>
           </ul>
 
@@ -125,16 +178,64 @@ function Navbar() {
           <div className={`${mobileNavStyle} ${nav ? "" : "left-[-100%]"}`}>
             <ul>
               <li className="p-4 text-3xl hover:text-grey-500">
-                <Link to="/">Home</Link>
+                <NavLink
+                  to="/"
+                  onClick={handleLinkClick}
+                  style={({ isActive }) => {
+                    return {
+                      borderBottom: isActive
+                        ? "2px solid " + (theme === "dark" ? "white" : "black")
+                        : "",
+                    };
+                  }}
+                >
+                  Home
+                </NavLink>
               </li>
               <li className="p-4 text-3xl hover:text-grey-500">
-                <Link to="/about">About</Link>
+                <NavLink
+                  to="/about"
+                  onClick={handleLinkClick}
+                  style={({ isActive }) => {
+                    return {
+                      borderBottom: isActive
+                        ? "2px solid " + (theme === "dark" ? "white" : "black")
+                        : "",
+                    };
+                  }}
+                >
+                  About
+                </NavLink>
               </li>
               <li className="p-4 text-3xl hover:text-grey-500">
-                <Link to="/codegrid">CodeGrid</Link>
+                <NavLink
+                  to="/codegrid"
+                  onClick={handleLinkClick}
+                  style={({ isActive }) => {
+                    return {
+                      borderBottom: isActive
+                        ? "2px solid " + (theme === "dark" ? "white" : "black")
+                        : "",
+                    };
+                  }}
+                >
+                  CodeGrid
+                </NavLink>
               </li>
               <li className="p-4 text-3xl hover:text-grey-500">
-                <Link to="/contact">Contact</Link>
+                <NavLink
+                  to="/contact"
+                  onClick={handleLinkClick}
+                  style={({ isActive }) => {
+                    return {
+                      borderBottom: isActive
+                        ? "2px solid " + (theme === "dark" ? "white" : "black")
+                        : "",
+                    };
+                  }}
+                >
+                  Contact
+                </NavLink>
               </li>
             </ul>
           </div>
