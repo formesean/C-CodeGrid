@@ -19,8 +19,8 @@ C CodeGrid is a comprehensive grid/compilation of university and entry-level C p
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/c-codegrid.git`
-2. Navigate to the project directory: `cd c-codegrid`
+1. Clone the repository: `git clone https://github.com/your-username/C-CodeGrid.git`
+2. Navigate to the project directory: `cd C-CodeGrid`
 3. Install the dependencies: `npm install`
 4. Start the development server: `npm run dev`
 5. Open browser and visit `http://localhost:3000` to access C CodeGrid.
