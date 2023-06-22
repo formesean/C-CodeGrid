@@ -38,8 +38,8 @@ function CodeGrid() {
   const codeComponents = [Code01, Code02, Code03];
 
   return (
-    <section className="px-16 pt-[16px] pb-16 overflow-y-auto h-screen scrollbar-thin scrollbar-thumb-appWhiteDis scrollbar-track-transparent">
-      <div className="grid grid-cols-5 gap-4">
+    <section className="px-16 max-lg:px-10 max-md:px-6 max-sm:px-2 pt-[16px] pb-16 overflow-y-auto h-screen scrollbar-thin scrollbar-thumb-appWhiteDis scrollbar-track-transparent">
+      <div className="grid grid-cols-5 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
         {codeComponents.map((Component, index) => (
           <div
             key={index}
@@ -53,7 +53,7 @@ function CodeGrid() {
             ) : (
               <Suspense
                 fallback={
-                  <div className="flex justify-center items-center m-0">
+                  <div className="flex justify-center items-center m-auto">
                     Loading...
                   </div>
                 }
