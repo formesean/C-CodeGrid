@@ -1,7 +1,5 @@
 # C CodeGrid
 
-![C CodeGrid Logo](logo.png)
-
 C CodeGrid is a comprehensive grid/compilation of university and entry-level C programming source codes. It aims to provide a valuable resource for programmers, students, and enthusiasts who want to learn and explore the world of C programming, from the basics to data structures and algorithms.
 
 ## Features
@@ -17,10 +15,7 @@ C CodeGrid is a comprehensive grid/compilation of university and entry-level C p
   - Sorting and searching algorithms
   - Data structures such as linked lists, stacks, queues, and trees
 - **Categorized Code Samples**: The codes are organized into different categories and subcategories, making it easier to navigate and find relevant examples.
-- **Interactive Code Editor**: Users can experiment with the codes directly on the website using the built-in interactive code editor, allowing them to modify and execute the code snippets.
 - **Syntax Highlighting**: The code snippets are displayed with syntax highlighting, enhancing code readability and making it easier to understand the structure and logic.
-- **Search Functionality**: Users can quickly search for specific code samples or topics using the search feature, saving time and effort in finding the desired information.
-- **User Contributions**: C CodeGrid encourages users to contribute their own C programming source codes, expanding the collection and fostering a collaborative learning environment.
 
 ## Installation
 
