@@ -13,7 +13,7 @@ const CodePreview = React.memo(({ onClick, index }) => (
 ));
 
 const Code01 = lazy(() => import("./Code/Code01"));
-const Code02 = lazy(() => import("./Code/Code01"));
+const Code02 = lazy(() => import("./Code/Code02"));
 const Code03 = lazy(() => import("./Code/Code01"));
 const Code04 = lazy(() => import("./Code/Code01"));
 const Code05 = lazy(() => import("./Code/Code01"));
@@ -62,13 +62,13 @@ function CodeGrid() {
   ];
 
   return (
-    <section className="px-16 max-lg:px-10 max-md:px-6 max-sm:px-2 pt-4 pb-16 overflow-y-auto h-screen scrollbar-thin scrollbar-thumb-appWhiteDis scrollbar-track-transparent">
+    <section className="px-16 max-lg:px-10 max-md:px-6 max-sm:px-2 pt-4 pb-16 overflow-y-auto h-screen scroll-smooth scrollbar-thin scrollbar-thumb-appWhiteDis scrollbar-track-transparent">
       <div className="grid grid-cols-5 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
         {codeComponents.map((Component, index) => (
           <div
             key={index}
             className={`m-2 border-2 border-appBlack rounded-[10px] dark:border-white dark:text-white p-[10px] hover:m-0 hover:cursor-pointer ease-in duration-300 ${
-              isExpanded(index) ? "expanded" : ""
+              isExpanded(index) ? "expanded bg-[#EEF1F4] dark:bg-[#1F2937]" : ""
             }`}
             onClick={() => handleClick(index)}
           >

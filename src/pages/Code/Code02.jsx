@@ -8,17 +8,32 @@ import {
 import { MdOutlineContentCopy, MdOutlineCheck } from "react-icons/md";
 import { CgClose } from "react-icons/cg";
 
-function Code01({ onCloseClick }) {
+function Code02({ onCloseClick }) {
   const { theme } = useContext(ThemeContext);
   const codeStyle = theme === "dark" ? atomOneDark : atomOneLight;
-  const codeString = `function Code01() {
-    const codeString = "(num) => num + 1";
-    return (
-      <SyntaxHighlighter language="jsx" style={atomOneDark}>
-        {codeString}
-      </SyntaxHighlighter>
-    );
-  }`;
+  const codeString = `#include <stdio.h>
+
+int main()
+{
+    int num, num1, num2;
+
+    // Asks value and storing it to a variable
+    printf("Enter a number : ");
+    scanf("%d", &num);
+
+    // Calculates and store the modulo to the variable num1
+    num1 = num % 10;
+
+    // Calculates and store the modulo to the variable num2
+    num2 = (num / 10) % 10;
+
+    // Memory constant
+    const int sum = num1 + num2;
+
+    // Prints the two extracted digits and its sum
+    printf("Sum: %d + %d = %d", num2, num1, sum);
+    return 0;
+}`;
 
   const [copy, setCopy] = useState(false);
   const [isCloseButtonHovered, setIsCloseButtonHovered] = useState(false);
@@ -89,7 +104,7 @@ function Code01({ onCloseClick }) {
         style={{ maxHeight: "445px" }}
       >
         <SyntaxHighlighter
-          language="jsx"
+          language="c"
           style={codeStyle}
           customStyle={{
             padding: "15px",
@@ -105,4 +120,4 @@ function Code01({ onCloseClick }) {
   );
 }
 
-export default Code01;
+export default Code02;
