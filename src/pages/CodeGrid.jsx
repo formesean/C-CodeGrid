@@ -15,6 +15,16 @@ const CodePreview = React.memo(({ onClick, index }) => (
 const Code01 = lazy(() => import("./Code/Code01"));
 const Code02 = lazy(() => import("./Code/Code01"));
 const Code03 = lazy(() => import("./Code/Code01"));
+const Code04 = lazy(() => import("./Code/Code01"));
+const Code05 = lazy(() => import("./Code/Code01"));
+const Code06 = lazy(() => import("./Code/Code01"));
+const Code07 = lazy(() => import("./Code/Code01"));
+const Code08 = lazy(() => import("./Code/Code01"));
+const Code09 = lazy(() => import("./Code/Code01"));
+const Code10 = lazy(() => import("./Code/Code01"));
+const Code11 = lazy(() => import("./Code/Code01"));
+const Code12 = lazy(() => import("./Code/Code01"));
+const Code13 = lazy(() => import("./Code/Code01"));
 
 const ExpandedCodeView = ({ onCloseClick, Component }) => (
   <Component onCloseClick={onCloseClick} />
@@ -35,10 +45,24 @@ function CodeGrid() {
 
   const isExpanded = (index) => index === expandedDiv;
 
-  const codeComponents = [Code01, Code02, Code03];
+  const codeComponents = [
+    Code01,
+    Code02,
+    Code03,
+    Code04,
+    Code05,
+    Code06,
+    Code07,
+    Code08,
+    Code09,
+    Code10,
+    Code11,
+    Code12,
+    Code13,
+  ];
 
   return (
-    <section className="px-16 max-lg:px-10 max-md:px-6 max-sm:px-2 pt-[16px] pb-16 overflow-y-auto h-screen scrollbar-thin scrollbar-thumb-appWhiteDis scrollbar-track-transparent">
+    <section className="px-16 max-lg:px-10 max-md:px-6 max-sm:px-2 pt-4 pb-16 overflow-y-auto h-screen scrollbar-thin scrollbar-thumb-appWhiteDis scrollbar-track-transparent">
       <div className="grid grid-cols-5 max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-4">
         {codeComponents.map((Component, index) => (
           <div

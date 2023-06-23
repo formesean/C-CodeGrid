@@ -11,8 +11,8 @@ import { FiSun, FiMoon } from "react-icons/fi";
 import { CgMenu, CgClose } from "react-icons/cg";
 
 import Home from "../pages/Home";
-import About from "../pages/About";
 import CodeGrid from "../pages/CodeGrid";
+import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Loader from "./Loader";
 
@@ -95,22 +95,6 @@ function Navbar() {
             </li>
             <li className="p-4">
               <NavLink
-                to="/about"
-                onClick={handleClick}
-                className={hoverClass}
-                style={({ isActive }) => {
-                  return {
-                    borderBottom: isActive
-                      ? "2px solid " + (theme === "dark" ? "white" : "black")
-                      : "",
-                  };
-                }}
-              >
-                About
-              </NavLink>
-            </li>
-            <li className="p-4">
-              <NavLink
                 to="/codegrid"
                 onClick={handleClick}
                 className={hoverClass}
@@ -123,6 +107,22 @@ function Navbar() {
                 }}
               >
                 CodeGrid
+              </NavLink>
+            </li>
+            <li className="p-4">
+              <NavLink
+                to="/about"
+                onClick={handleClick}
+                className={hoverClass}
+                style={({ isActive }) => {
+                  return {
+                    borderBottom: isActive
+                      ? "2px solid " + (theme === "dark" ? "white" : "black")
+                      : "",
+                  };
+                }}
+              >
+                About
               </NavLink>
             </li>
             <li className="p-4">
@@ -194,21 +194,6 @@ function Navbar() {
               </li>
               <li className="p-4 text-3xl hover:text-grey-500">
                 <NavLink
-                  to="/about"
-                  onClick={handleLinkClick}
-                  style={({ isActive }) => {
-                    return {
-                      borderBottom: isActive
-                        ? "2px solid " + (theme === "dark" ? "white" : "black")
-                        : "",
-                    };
-                  }}
-                >
-                  About
-                </NavLink>
-              </li>
-              <li className="p-4 text-3xl hover:text-grey-500">
-                <NavLink
                   to="/codegrid"
                   onClick={handleLinkClick}
                   style={({ isActive }) => {
@@ -220,6 +205,21 @@ function Navbar() {
                   }}
                 >
                   CodeGrid
+                </NavLink>
+              </li>
+              <li className="p-4 text-3xl hover:text-grey-500">
+                <NavLink
+                  to="/about"
+                  onClick={handleLinkClick}
+                  style={({ isActive }) => {
+                    return {
+                      borderBottom: isActive
+                        ? "2px solid " + (theme === "dark" ? "white" : "black")
+                        : "",
+                    };
+                  }}
+                >
+                  About
                 </NavLink>
               </li>
               <li className="p-4 text-3xl hover:text-grey-500">

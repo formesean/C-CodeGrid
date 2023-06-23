@@ -5,7 +5,7 @@ function About() {
     "m-4 max-xl:text-sm max-lg:text-xs hover:scale-105 rounded-[10px] border-2 border-appBlack dark:border-appWhiteHigh dark:text-appWhiteHigh leading-8 ease-in duration-300";
 
   return (
-    <section className="p-16 pt-1 max-xl:px-8 max-sm:px-0 flex h-screen">
+    <section className="p-16 pt-4 pb-20 max-xl:px-8 max-sm:px-0 flex h-screen">
       <div className="grid grid-cols-3 grid-rows-2 max-md:grid-cols-5 max-sm:grid-rows-3 gap-x-2">
         <div
           className={`row-span-1 col-span-2 max-md:col-span-3 max-sm:col-span-5 ${divStyle}`}
